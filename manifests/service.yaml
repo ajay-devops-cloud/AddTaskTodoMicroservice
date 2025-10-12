@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: add-task
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: add-task
   ports:
