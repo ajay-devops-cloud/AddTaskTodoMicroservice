@@ -1,22 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: add-task
+metadata: 
+  name: todo-add
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: add-task
+      type: add-task
   template:
     metadata:
-      labels:
-        app: add-task
+      labels: 
+        type: add-task
     spec:
       containers:
-      - name: add-task
-        env:
-          - name: CONNECTION_STRING
-            value: "Driver={ODBC Driver 17 for SQL Server};Server=tcp:devopsinsiderssrv.database.windows.net,1433;Database=todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
-        image: devopsinsiders/add-task
-        ports:
-        - containerPort: 8000
+        - image: todo-add-tasks-api
+          name: todo-app
+          ports:
+            containerPort: 8000
