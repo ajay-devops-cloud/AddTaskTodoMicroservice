@@ -6,7 +6,12 @@ WORKDIR /app
 
 # Copy the application files into the container
 COPY . .
-
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    unixodbc \
+    unixodbc-dev \
+    && rm -rf /var/lib/apt/lists/*
 # Install necessary packages
 RUN apt-get update && apt-get install -y unixodbc unixodbc-dev
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
