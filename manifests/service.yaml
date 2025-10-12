@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: add-task
 spec:
-  type: LoadBalancer
+  type: ClusterIp
   selector:
     app: add-task
   ports:
