@@ -6,11 +6,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      type: add-task
+      app: add-task
   template:
     metadata:
       labels: 
-        type: add-task
+        app: add-task
     spec:
       containers:
         - image: rk8sacr.azurecr.io/todo-add-tasks-api:v1
