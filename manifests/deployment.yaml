@@ -16,4 +16,4 @@ spec:
         - image: todo-add-tasks-api
           name: todo-app
           ports:
-            containerPort: 8000
+            - containerPort: 8000
