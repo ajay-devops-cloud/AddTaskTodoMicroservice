@@ -17,4 +17,7 @@ spec:
           name: todo-app
           ports:
             - containerPort: 8000
+          env:
+            - name: CONNECTION_STRING
+              value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:devdas-sql-server.database.windows.net,1433;Database=devdas-database;Uid=devops123;Pwd=Devops@12345;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
             
